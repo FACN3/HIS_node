@@ -1,0 +1,24 @@
+{
+  "name": "HIS_node",
+  "version": "1.0.0",
+  "description": "## What This is an one-page website with autocomplete function.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/clientTest.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN3/HIS_node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN3/HIS_node/issues"
+  },
+  "homepage": "https://github.com/FACN3/HIS_node#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}
