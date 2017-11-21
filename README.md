@@ -9,7 +9,7 @@ We would like to practice what we have learned this week, including;
   * modularization  
 
 ## Process
-![Image of software architecture](/plainimage.jpeg)
+![Image of software architecture](./resources/planimage.jpeg)
 1. Designing software architecture
 2. Planning out general steps of HIS_node_project
 3. Splitting tasks
