@@ -9,6 +9,7 @@ function getData(data) {
   document.getElementById('output').innerHTML = data;
 }
 
+
 var myScript = '';
 document.getElementById('searchbox').onkeyup = function(){
   var searchText = document.getElementById('searchbox').value;
