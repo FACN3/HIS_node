@@ -10,6 +10,7 @@ We would like to practice what we have learned this week, including;
 
 ## Process
 ![Image of software architecture](./resources/planimage.jpeg)
+![Image of software process](./resources/process.jpeg)
 1. Designing software architecture
 2. Planning out general steps of HIS_node_project
 3. Splitting tasks
