@@ -1,0 +1,12 @@
+
+body ,main, section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .headline{
+    color: blue;
+    font-family: cursive;
+  }
