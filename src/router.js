@@ -1,7 +1,9 @@
 const handlers = require('./handlers');
 
 const routes = {
-    '/' : handlers.home,
+    '/' : handlers.html,
+    '/style.css' : handlers.staticFiles,
+    '/logic.js'  : handlers.staticFiles,
     '404' : handlers.notFound
 }
 
