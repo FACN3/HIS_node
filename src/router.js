@@ -4,6 +4,7 @@ const routes = {
     '/' : handlers.html,
     '/style.css' : handlers.staticFiles,
     '/logic.js'  : handlers.staticFiles,
+    '/model.js' : handlers.model,
     '404' : handlers.notFound
 }
 
