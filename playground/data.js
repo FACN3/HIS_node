@@ -14,7 +14,7 @@ var myScript = '';
 document.getElementById('searchbox').onkeyup = function(){
   var searchText = document.getElementById('searchbox').value;
   myScript = document.createElement('script');
-  myScript.src = "http://en.wikipedia.org/w/api.php?action=opensearch&limit=10&format=json&callback=getData&search=" + searchText;
+  myScript.src = "https://www.mediawiki.org/w/api.php?action=opensearch&search=" + searchText;
 
 document.body.appendChild(myScript);
 };

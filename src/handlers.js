@@ -1,4 +1,4 @@
-const data = require('./model');
+const getData = require('./model');
 const fs = require('fs');
 const path = require('path');
 
@@ -41,8 +41,15 @@ handlers.staticFiles = function (request, response) {
     });
 }
 
-handlers.model = function () {
-  return 'ok';
+handlers.model = function (request, response) {
+    getData(request.url ,function (error,purpose){  
+        if (error){
+            response.writeHead(404, { 'Content-Type': 'text/html' });
+            response.end('error geting data from wiki', error);   
+        }
+        response.writeHead(200, { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify(purpose));
+        });
 }
 
 handlers.notFound = function (request, response) {

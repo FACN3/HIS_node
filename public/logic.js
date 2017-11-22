@@ -9,10 +9,12 @@
           var xhr = new XMLHttpRequest();
           xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-              return callback(JSON.parse(xhr.responseText));
+             console.log(xhr.responseText);
+            }else{
+              console.log(xhr);
             }
           }
-          xhr.open("GET", "/model.js", true);
+          xhr.open("GET",window.location.href + "model.js");
           xhr.send();
         };
 
