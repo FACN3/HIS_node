@@ -28,7 +28,7 @@ handlers.staticFiles = function (request, response) {
         'css': 'text/css',
         'js': 'javascript/application'
     }[extension];
-    
+
     fs.readFile(__dirname + '/../public/'+ request.url,
     function (error, file) {
         if (error) {
@@ -41,10 +41,12 @@ handlers.staticFiles = function (request, response) {
     });
 }
 
+handlers.model = function () {
+  return 'ok';
+}
 
 handlers.notFound = function (request, response) {
     response.writeHead(404, { 'Content-Type': 'text/html' });
     response.end('Resources not found');
 }
 module.exports = handlers;
-
