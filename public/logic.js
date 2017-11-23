@@ -7,6 +7,7 @@
 
   function apiCallback(apiResults) {
     var ulElement = document.getElementById('searchResult');
+    cleanOldApiReasult(ulElement);
     apiResults.forEach(function (apiResult) {
       var listElement = document.createElement('li');
       var linkElement = document.createElement('a');
@@ -25,8 +26,14 @@
         apiCallback(JSON.parse(xhr.responseText));
       }
     }
-    xhr.open("GET", window.location.href + "model?q=" +searchQuery);
+    xhr.open("GET", window.location.href + "model?q=" + searchQuery);
     xhr.send();
   };
+
+  function cleanOldApiReasult(element) {
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
+  }
 
 }());
