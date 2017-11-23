@@ -1,5 +1,5 @@
 function getData(searchQuery, callback) {
-    searchQuery = 'obama';
+    searchQuery = searchQuery.split('=')[1];
     var url = "https://en.wikipedia.org/w/api.php?action=opensearch&limit=10&search=" + searchQuery;
     const request = require('request');
 

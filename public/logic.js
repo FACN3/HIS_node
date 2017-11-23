@@ -25,7 +25,7 @@
         apiCallback(JSON.parse(xhr.responseText));
       }
     }
-    xhr.open("GET", window.location.href + "model.js");
+    xhr.open("GET", window.location.href + "model?q=" +searchQuery);
     xhr.send();
   };
 
