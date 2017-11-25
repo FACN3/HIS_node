@@ -7,7 +7,7 @@ const routes = {
     '404' : handlers.notFound
 }
 
-module.exports = function(request, response) {
+module.exports = (request, response) => {
     if (routes[request.url]) {
         routes[request.url](request, response);
     }else if (request.url.split('?')[0] === '/model'){
