@@ -1,9 +1,9 @@
-function getData(searchQuery, callback) {
+const getData = (searchQuery, callback) => {
     searchQuery = searchQuery.split('=')[1];
-    var url = "https://en.wikipedia.org/w/api.php?action=opensearch&limit=10&search=" + searchQuery;
+    const url = "https://en.wikipedia.org/w/api.php?action=opensearch&limit=10&search=" + searchQuery;
     const request = require('request');
 
-    request(url, function (error, response, body) {
+    request(url,  (error, response, body) => {
         if(error){
             return callback('error' ,error);
         }

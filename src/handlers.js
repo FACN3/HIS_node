@@ -4,30 +4,19 @@ const path = require('path');
 
 const handlers = {};
 
-handlers.html = function (request, response) {
-    const endpoint = request.url;
-    if (endpoint === '/') {
-        fs.readFile(__dirname + '/../public/index.html',
-            function (error, file) {
-                if (error) {
-                    heandleReadFileError(error);
-                }
-                response.writeHead(200, { 'Content-Type': 'text/html' });
-                response.end(file);
-            });
-    }
+handlers.html =  (request, response) => {
+    handlers.staticFiles(request, response ,'/index.html')
 }
 
-handlers.staticFiles = function (request, response) {
-    const endpoint = request.url;
-    const extension = request.url.split('.')[1];
+handlers.staticFiles =  (request, response ,url) => {
+    const extension = url.split('.')[1];
     const extensionType = {
         'html': 'text/html',
         'css': 'text/css',
         'js': 'javascript/application'
     }[extension];
 
-    fs.readFile(__dirname + '/../public/' + request.url,
+    fs.readFile(__dirname + '/../public/' + url,
         function (error, file) {
             if (error) {
                 heandleReadFileError(error);
@@ -37,8 +26,8 @@ handlers.staticFiles = function (request, response) {
         });
 }
 
-handlers.model = function (request, response) {
-    getData(request.url, function (error, purpose) {
+handlers.model =  (request, response) => {
+    getData(request.url,  (error, purpose) => {
         if (error) {
             heandleReadFileError(error);
         }
@@ -47,14 +36,9 @@ handlers.model = function (request, response) {
     });
 }
 
-handlers.notFound = function (request, response) {
+ handlers.heandleError = (error) => {
     response.writeHead(404, { 'Content-Type': 'text/html' });
-    response.end('Resources not found');
-}
-
-function heandleReadFileError(error) {
-    response.writeHead(404, { 'Content-Type': 'text/html' });
-    response.end('error geting data from wiki', error);
+    response.end('Sorry, an error has occurred', error);
 }
 
 module.exports = handlers;
