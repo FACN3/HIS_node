@@ -1,18 +1,18 @@
-const handlers = require('./handlers');
+const { staticFiles, model, html, heandleError } = require("./handlers");
 
 const routes = {
-    '/' : handlers.html,
-    '/style.css' : handlers.staticFiles,
-    '/logic.js'  : handlers.staticFiles,
-    '404' : handlers.heandleError
-}
+  "/": html,
+  "/style.css": staticFiles,
+  "/logic.js": staticFiles,
+  "404": heandleError
+};
 
 module.exports = (request, response) => {
-    if (routes[request.url]) {
-        routes[request.url](request, response ,request.url);
-    }else if (request.url.split('?')[0] === '/model'){
-        handlers.model(request, response);
-    } else {
-        routes[404]('404, page not found');
-    }
-}
+  if (routes[request.url]) {
+    routes[request.url](request, response, request.url);
+  } else if (request.url.split("?")[0] === "/model") {
+    handlers.model(request, response);
+  } else {
+    routes[404]("404, page not found");
+  }
+};
