@@ -9,7 +9,7 @@ const routes = {
 
 module.exports = (request, response) => {
     if (routes[request.url]) {
-        routes[request.url](request, response ,{url});
+        routes[request.url](request, response ,request.url);
     }else if (request.url.split('?')[0] === '/model'){
         handlers.model(request, response);
     } else {
