@@ -4,9 +4,11 @@ body ,main, section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 5vw;
   }
 
   .headline{
     color: blue;
     font-family: cursive;
+    text-align: center;
   }
