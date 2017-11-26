@@ -18,24 +18,23 @@ We would like to practice what we have learned this week, including;
 
 ## How to use this website
 
-#### Use this link :
+#### 1) Use this link :
 ```
-https://github.com/FACN3/HIS_node (needs to be changed)
+https://his-node.herokuapp.com/
 ```
-#### OR if you want to run the test :
+#### 2) If you want to run the test :
 
-```
-##Clone this repository
-```
+
+##### Clone this repository
+
 
 ```
 $ git clone https://github.com/FACN3/HIS_node.git
 ```
+
+##### Run the tests
 ```
 $ npm install
-```
-```
-##Run the tests
 ```
 
 ```
