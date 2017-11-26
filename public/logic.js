@@ -3,7 +3,7 @@
     .getElementById("searchQuery")
     .addEventListener("input", function(event) {
       var searchQuery = event.target.value;
-      if (searchQuery) {
+      if (searchQuery && searchQuery.trim().length > 0) {
         sendReqToServer(searchQuery, apiCallback);
       }else{
         var ulElement = document.getElementById("searchResult");
