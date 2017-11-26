@@ -1,4 +1,4 @@
-const { staticFiles, model, html, heandleError } = require("./handlers");
+const {html, staticFiles, model, heandleError} = require("./handlers");
 
 const routes = {
   "/": html,
@@ -11,8 +11,8 @@ module.exports = (request, response) => {
   if (routes[request.url]) {
     routes[request.url](request, response, request.url);
   } else if (request.url.split("?")[0] === "/model") {
-    handlers.model(request, response);
+    model(request, response);
   } else {
-    routes[404]("404, page not found");
+    routes[404]("404, page not found", request, response);
   }
 };
