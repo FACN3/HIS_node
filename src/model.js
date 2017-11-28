@@ -4,6 +4,7 @@ const getData = (searchQuery, callback) => {
     const request = require('request');
 
     request(url,  (error, response, body) => {
+        /* istanbul ignore if  */
         if(error){
             return callback('error' ,error);
         }

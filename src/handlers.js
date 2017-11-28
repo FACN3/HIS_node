@@ -17,6 +17,7 @@ handlers.staticFiles = (request, response, url) => {
   }[extension];
 
   fs.readFile(__dirname + "/../public/" + url, function(error, file) {
+   /* istanbul ignore if  */
     if (error) {
       heandleError(error, request, response);
     }
@@ -26,12 +27,13 @@ handlers.staticFiles = (request, response, url) => {
 };
 
 handlers.model = (request, response) => {
-  getData(request.url, (error, purpose) => {
+  getData(request.url, (error, array) => {
+     /* istanbul ignore if  */
     if (error) {
       heandleError(error, request, response);
     }
     response.writeHead(200, { "Content-Type": "application/json" });
-    response.end(JSON.stringify(purpose));
+    response.end(JSON.stringify(array));
   });
 };
 
