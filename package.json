@@ -1,5 +1,5 @@
 {
-  "name": "HIS_node",
+  "name": "his_node",
   "version": "1.0.0",
   "description": "## What This is an one-page website with autocomplete function.",
   "main": "server.js",
@@ -25,6 +25,7 @@
     "tape": "^4.8.0"
   },
   "dependencies": {
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "shot": "^3.4.0"
   }
 }

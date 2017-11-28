@@ -37,7 +37,7 @@ handlers.model = (request, response) => {
 
 handlers.heandleError = (error, request, response) => {
   response.writeHead(404, { "Content-Type": "text/html" });
-  response.end("Sorry, an error has occurred", error);
+  response.end(`Sorry, an error has occurred${error}`);
 };
 
 module.exports = handlers;
